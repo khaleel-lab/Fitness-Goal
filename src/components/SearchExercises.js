@@ -15,7 +15,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 				'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
 				exerciseOptions
 			);
-
 			setBodyParts(['all', ...bodyPartsData]);
 		};
 
@@ -40,6 +39,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 			setSearch('');
 			setExercises(searchedExercises);
 		}
+
+		window.scrollTo({ top: 2000, behavior: 'smooth' });
 	};
 
 	return (
@@ -72,6 +73,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 					}}
 					placeholder='Search Exercises'
 					type='text'
+					onSubmit={handleSearch}
 				/>
 				<Button
 					className='search-btn'
@@ -90,6 +92,15 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 					Search
 				</Button>
 			</Box>
+
+			<Typography
+				fontWeight={600}
+				sx={{ fontSize: { lg: '44px', xs: '30px' } }}
+				mb='50px'
+				textAlign='center'
+			>
+				Choose Which Part Exercises You <br /> Know More
+			</Typography>
 			<Box
 				sx={{
 					position: 'relative',

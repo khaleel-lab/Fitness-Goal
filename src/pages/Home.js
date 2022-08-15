@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 import { Exercises, HeroBanner, SearchExercises } from '../components';
+import RandomQuote from '../components/RandomQuote';
 
 const Home = () => {
 	const [exercises, setExercises] = useState([]);
@@ -9,6 +10,7 @@ const Home = () => {
 
 	return (
 		<Box>
+			<RandomQuote />
 			<HeroBanner />
 			<SearchExercises
 				setExercises={setExercises}

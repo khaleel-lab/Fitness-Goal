@@ -44,6 +44,8 @@ const ExerciseDetail = () => {
 		};
 
 		fetchExercisesData();
+
+		window.scrollTo({ top: 100, behavior: 'smooth' });
 	}, [exerciseId]);
 
 	return (

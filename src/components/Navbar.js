@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Stack } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -17,11 +17,13 @@ const useStyles = makeStyles({
 	},
 	navbar_link_border: {
 		borderBottom: '3px solid #FF2625',
+		textDecoration: 'none',
 	},
 });
 
 const Navbar = () => {
 	const classes = useStyles();
+	const [active, setActive] = useState(true);
 	return (
 		<Stack
 			direction='row'
@@ -39,11 +41,20 @@ const Navbar = () => {
 			<Stack direction='row' gap='40px' fontSize='24px' alignItems='flex-end'>
 				<Link
 					to='/'
-					className={`${classes.navbar_link} ${classes.navbar_link_border}`}
+					className={
+						active ? `${classes.navbar_link_border}` : `${classes.navbar_link}`
+					}
+					onClick={() => setActive((prevActive) => !prevActive)}
 				>
 					Home
 				</Link>
-				<a href='#exercises' className={classes.navbar_link}>
+				<a
+					href='#exercises'
+					className={
+						!active ? `${classes.navbar_link_border}` : `${classes.navbar_link}`
+					}
+					onClick={() => setActive((prevActive) => !prevActive)}
+				>
 					Exercises
 				</a>
 			</Stack>
