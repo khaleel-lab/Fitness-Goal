@@ -10,7 +10,8 @@ const Home = () => {
 
 	return (
 		<Box>
-			<RandomQuote />
+			{/* Api doesn't exists for Random Quote */}
+			{/* <RandomQuote /> */}
 			<HeroBanner />
 			<SearchExercises
 				setExercises={setExercises}
